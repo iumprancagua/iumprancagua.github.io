@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diario de sueño · 14 noches</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#16202E;
+    --papel:#F7F8FA;
+    --noche:#2F4B7C;
+    --madrugada:#C9A227;
+    --apagado:#3A4859;
+    --linea:#DDE3EA;
+    --blanco:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--papel);
+    color:var(--tinta);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:24px 18px 80px;}
+
+  /* ---------- Encabezado ---------- */
+  header{border-bottom:2px solid var(--tinta);padding-bottom:18px;margin-bottom:28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--apagado);margin-bottom:8px;
+  }
+  h1{
+    font-family:'Spectral',Georgia,serif;
+    font-weight:600;font-size:34px;line-height:1.1;margin:0 0 10px;
+  }
+  .sub{font-size:14px;color:var(--apagado);max-width:52ch;margin:0;}
+
+  /* ---------- Secciones ---------- */
+  section{margin-bottom:34px;}
+  h2{
+    font-family:'Spectral',Georgia,serif;
+    font-size:21px;font-weight:600;margin:0 0 4px;
+  }
+  .hint{font-size:13px;color:var(--apagado);margin:0 0 16px;}
+
+  /* ---------- Formulario ---------- */
+  .card{
+    background:var(--blanco);
+    border:1px solid var(--linea);
+    border-radius:6px;
+    padding:18px;
+  }
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .full{grid-column:1 / -1;}
+  label{
+    display:block;
+    font-size:14px;font-weight:600;letter-spacing:.01em;
+    color:var(--tinta);margin-bottom:6px;
+  }
+  ::placeholder{color:#5A6878;opacity:1;}
+  input[type=date],input[type=time],input[type=number],textarea,select{
+    width:100%;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:16px;
+    color:var(--tinta);
+    background:#FFFFFF;
+    border:1px solid #9BA8B6;
+    border-radius:4px;
+    padding:10px;
+  }
+  textarea{font-family:'IBM Plex Sans',sans-serif;resize:vertical;min-height:60px;}
+  input:focus,textarea:focus,select:focus{
+    outline:2px solid var(--noche);outline-offset:1px;border-color:var(--noche);
+  }
+  .escala{display:flex;gap:6px;}
+  .escala button{
+    flex:1;
+    font-family:'IBM Plex Mono',monospace;font-size:15px;
+    padding:9px 0;
+    background:var(--papel);
+    border:1px solid #B6C0CC;border-radius:4px;
+    color:var(--tinta);cursor:pointer;
+  }
+  .escala button[aria-pressed="true"]{
+    background:var(--noche);border-color:var(--noche);color:#fff;
+  }
+  .escala button:focus-visible{outline:2px solid var(--tinta);outline-offset:1px;}
+  .toggle{display:flex;gap:6px;}
+  .toggle button{
+    flex:1;font-size:14px;padding:9px 0;
+    background:var(--papel);border:1px solid #B6C0CC;border-radius:4px;
+    color:var(--tinta);cursor:pointer;font-family:inherit;
+  }
+  .toggle button[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff;}
+
+  .acciones{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+  .btn{
+    font-family:inherit;font-size:15px;font-weight:500;
+    padding:11px 20px;border-radius:4px;cursor:pointer;border:1px solid var(--tinta);
+    background:var(--tinta);color:#fff;
+  }
+  .btn.sec{background:transparent;color:var(--tinta);}
+  .btn:focus-visible{outline:2px solid var(--noche);outline-offset:2px;}
+  .aviso{font-size:13px;color:var(--noche);margin-top:10px;min-height:19px;}
+
+  /* ---------- Calculado ---------- */
+  .calc{
+    display:flex;gap:22px;flex-wrap:wrap;
+    border-top:1px solid var(--linea);margin-top:16px;padding-top:14px;
+  }
+  .calc div{min-width:110px;}
+  .calc .k{font-family:'IBM Plex Mono',monospace;font-size:22px;color:var(--noche);}
+  .calc .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--apagado);}
+
+  /* ---------- Patrón (firma) ---------- */
+  .patron{background:var(--blanco);border:1px solid var(--linea);border-radius:6px;padding:18px 14px;}
+  .fila{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
+  .fecha{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;
+    color:var(--tinta);width:52px;flex-shrink:0;text-align:right;
+  }
+  .pista{
+    position:relative;flex:1;height:16px;
+    background:var(--papel);border-radius:2px;overflow:hidden;
+  }
+  .barra{position:absolute;top:0;bottom:0;background:var(--noche);opacity:.85;}
+  .marca-fuera{position:absolute;top:0;bottom:0;width:3px;background:var(--madrugada);left:0;}
+  .horas{
+    display:flex;margin:8px 0 0 60px;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--apagado);
+  }
+  .horas span{flex:1;text-align:left;}
+  .leyenda{
+    display:flex;gap:16px;flex-wrap:wrap;
+    font-size:12px;color:var(--apagado);margin-top:14px;
+  }
+  .leyenda i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px;vertical-align:-1px;}
+  .vacio{font-size:14px;color:var(--apagado);font-style:italic;padding:10px 0;}
+
+  /* ---------- Resumen ---------- */
+  .resumen{background:var(--blanco);border:1px solid var(--linea);border-radius:6px;padding:18px;}
+  .r-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .r-grid .k{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--tinta);line-height:1.1;}
+  .r-grid .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--apagado);margin-top:3px;}
+
+  footer{
+    border-top:1px solid var(--linea);margin-top:34px;padding-top:16px;
+    font-size:13px;color:var(--apagado);
+  }
+
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr;}
+    h1{font-size:28px;}
+  }
+  @media print{
+    body{background:#fff;}
+    .noprint{display:none !important;}
+    .wrap{max-width:100%;padding:0;}
+    .card,.patron,.resumen{border:1px solid #999;break-inside:avoid;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Registro clínico · 14 noches</div>
+  <h1>Diario de sueño</h1>
+  <p class="sub">Se completa cada mañana, apenas despierta. Estimaciones, no exactitudes: no mire el reloj de noche para llenarlo. Al terminar, imprima y lleve el patrón a la consulta.</p>
+</header>
+
+<section class="noprint">
+  <h2>Anoche</h2>
+  <p class="hint">Un registro por día. Si repite la fecha, se reemplaza el anterior.</p>
+  <div class="card">
+    <div class="grid">
+      <div>
+        <label for="fecha">Fecha (mañana de hoy)</label>
+        <input type="date" id="fecha">
+      </div>
+      <div>
+        <label for="cena">Hora de la cena</label>
+        <input type="time" id="cena">
+      </div>
+      <div>
+        <label for="acostarse">Me acosté a las</label>
+        <input type="time" id="acostarse">
+      </div>
+      <div>
+        <label for="dormirse">Calculo que me dormí a las</label>
+        <input type="time" id="dormirse">
+      </div>
+      <div>
+        <label for="despertar">Desperté por última vez a las</label>
+        <input type="time" id="despertar">
+      </div>
+      <div>
+        <label for="levantarse">Me levanté a las</label>
+        <input type="time" id="levantarse">
+      </div>
+      <div>
+        <label for="despertares">Despertares durante la noche</label>
+        <input type="number" id="despertares" min="0" max="20" placeholder="0">
+      </div>
+      <div>
+        <label for="siesta">Siesta (minutos)</label>
+        <input type="number" id="siesta" min="0" max="300" placeholder="0">
+      </div>
+      <div>
+        <label for="cafe">Último café o té</label>
+        <input type="time" id="cafe">
+      </div>
+      <div>
+        <label for="alcohol">Alcohol ayer</label>
+        <div class="toggle" id="alcohol" role="group">
+          <button type="button" data-v="no" aria-pressed="true">No</button>
+          <button type="button" data-v="si" aria-pressed="false">Sí</button>
+        </div>
+      </div>
+      <div class="full">
+        <label for="fuera">¿Dormí fuera de mi casa?</label>
+        <div class="toggle" id="fuera" role="group">
+          <button type="button" data-v="no" aria-pressed="true">En mi casa</button>
+          <button type="button" data-v="si" aria-pressed="false">Fuera de casa</button>
+        </div>
+      </div>
+      <div>
+        <label>Calidad del sueño (1 mala · 5 buena)</label>
+        <div class="escala" id="calidad" role="group">
+          <button type="button" data-v="1" aria-pressed="false">1</button>
+          <button type="button" data-v="2" aria-pressed="false">2</button>
+          <button type="button" data-v="3" aria-pressed="false">3</button>
+          <button type="button" data-v="4" aria-pressed="false">4</button>
+          <button type="button" data-v="5" aria-pressed="false">5</button>
+        </div>
+      </div>
+      <div>
+        <label>Ánimo al despertar (1 bajo · 5 bueno)</label>
+        <div class="escala" id="animo" role="group">
+          <button type="button" data-v="1" aria-pressed="false">1</button>
+          <button type="button" data-v="2" aria-pressed="false">2</button>
+          <button type="button" data-v="3" aria-pressed="false">3</button>
+          <button type="button" data-v="4" aria-pressed="false">4</button>
+          <button type="button" data-v="5" aria-pressed="false">5</button>
+        </div>
+      </div>
+      <div class="full">
+        <label for="notas">Notas (viaje, preocupación, ruido, medicamentos)</label>
+        <textarea id="notas" placeholder="Lo que crea que influyó"></textarea>
+      </div>
+    </div>
+
+    <div class="calc">
+      <div><div class="k" id="c-total">—</div><div class="l">Sueño total</div></div>
+      <div><div class="k" id="c-cama">—</div><div class="l">En cama</div></div>
+      <div><div class="k" id="c-efic">—</div><div class="l">Eficiencia</div></div>
+    </div>
+
+    <div class="acciones">
+      <button class="btn" id="guardar">Guardar la noche</button>
+      <button class="btn sec" id="imprimir">Imprimir todo</button>
+    </div>
+    <div class="aviso" id="aviso"></div>
+  </div>
+</section>
+
+<section>
+  <h2>Patrón de las noches</h2>
+  <p class="hint">Cada franja es una noche, de las 18:00 a las 12:00 del día siguiente. Lo que el médico busca aquí es si el despertar cae siempre a la misma hora.</p>
+  <div class="patron">
+    <div id="filas"><p class="vacio">Aún no hay noches registradas.</p></div>
+    <div class="horas">
+      <span>18</span><span>21</span><span>00</span><span>03</span><span>06</span><span>09</span>
+    </div>
+    <div class="leyenda">
+      <span><i style="background:var(--noche)"></i>Dormido</span>
+      <span><i style="background:var(--madrugada)"></i>Noche fuera de casa</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Resumen</h2>
+  <p class="hint">Promedios de lo registrado hasta ahora.</p>
+  <div class="resumen">
+    <div class="r-grid">
+      <div><div class="k" id="r-noches">0</div><div class="l">Noches registradas</div></div>
+      <div><div class="k" id="r-total">—</div><div class="l">Sueño promedio</div></div>
+      <div><div class="k" id="r-efic">—</div><div class="l">Eficiencia promedio</div></div>
+      <div><div class="k" id="r-desp">—</div><div class="l">Hora media de despertar</div></div>
+      <div><div class="k" id="r-dorm">—</div><div class="l">Hora media de dormirse</div></div>
+      <div><div class="k" id="r-animo">—</div><div class="l">Ánimo promedio</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  La eficiencia del sueño es el porcentaje del tiempo en cama que se pasó durmiendo. Bajo 85% de forma sostenida es el dato que orienta el tratamiento conductual del insomnio. Este registro es una herramienta de observación, no un diagnóstico.
+</footer>
+
+</div>
+
+<script>
+const CLAVE='diario-sueno:registros';
+let registros=[];
+const sel={alcohol:'no',fuera:'no',calidad:null,animo:null};
+
+const $=id=>document.getElementById(id);
+
+/* ---- grupos de botones ---- */
+function grupo(id,unico){
+  const cont=$(id);
+  cont.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    [...cont.querySelectorAll('button')].forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    sel[id]=b.dataset.v;
+  });
+}
+['alcohol','fuera','calidad','animo'].forEach(g=>grupo(g));
+
+/* ---- utilidades de hora ---- */
+function aMin(h){ if(!h) return null; const [a,b]=h.split(':').map(Number); return a*60+b; }
+function texto(min){
+  if(min==null||isNaN(min)) return '—';
+  const h=Math.floor(min/60), m=Math.round(min%60);
+  return h+'h '+String(m).padStart(2,'0');
+}
+function reloj(min){
+  if(min==null||isNaN(min)) return '—';
+  let m=((min%1440)+1440)%1440;
+  return String(Math.floor(m/60)).padStart(2,'0')+':'+String(Math.round(m%60)).padStart(2,'0');
+}
+/* diferencia cruzando medianoche */
+function tramo(ini,fin){
+  if(ini==null||fin==null) return null;
+  let d=fin-ini; if(d<0) d+=1440; return d;
+}
+
+function calcular(r){
+  const cama=tramo(aMin(r.acostarse),aMin(r.levantarse));
+  const sueno=tramo(aMin(r.dormirse),aMin(r.despertar));
+  const efic=(cama&&sueno)?Math.round(sueno/cama*100):null;
+  return {cama,sueno,efic};
+}
+
+function refrescarCalculo(){
+  const r={acostarse:$('acostarse').value,levantarse:$('levantarse').value,
+           dormirse:$('dormirse').value,despertar:$('despertar').value};
+  const c=calcular(r);
+  $('c-total').textContent=texto(c.sueno);
+  $('c-cama').textContent=texto(c.cama);
+  $('c-efic').textContent=c.efic?c.efic+'%':'—';
+}
+['acostarse','levantarse','dormirse','despertar'].forEach(id=>
+  $(id).addEventListener('change',refrescarCalculo));
+
+/* ---- almacenamiento (localStorage del navegador) ---- */
+function cargar(){
+  try{
+    const guardado=window.localStorage.getItem(CLAVE);
+    registros=guardado?JSON.parse(guardado):[];
+  }catch(e){ registros=[]; }
+  pintar();
+}
+function guardarTodo(){
+  try{
+    window.localStorage.setItem(CLAVE,JSON.stringify(registros));
+    return true;
+  }catch(e){ return false; }
+}
+
+/* ---- guardar la noche ---- */
+$('guardar').addEventListener('click',()=>{
+  const fecha=$('fecha').value;
+  if(!fecha){ $('aviso').textContent='Falta la fecha.'; return; }
+  if(!$('dormirse').value||!$('despertar').value){
+    $('aviso').textContent='Falta la hora en que se durmió o despertó.'; return;
+  }
+  const r={
+    fecha,
+    cena:$('cena').value, acostarse:$('acostarse').value,
+    dormirse:$('dormirse').value, despertar:$('despertar').value,
+    levantarse:$('levantarse').value||$('despertar').value,
+    despertares:$('despertares').value, siesta:$('siesta').value,
+    cafe:$('cafe').value, notas:$('notas').value,
+    alcohol:sel.alcohol, fuera:sel.fuera,
+    calidad:sel.calidad, animo:sel.animo
+  };
+  registros=registros.filter(x=>x.fecha!==fecha);
+  registros.push(r);
+  registros.sort((a,b)=>a.fecha.localeCompare(b.fecha));
+  const ok=guardarTodo();
+  $('aviso').textContent=ok
+    ? 'Guardado. Van '+registros.length+' de 14 noches.'
+    : 'No se pudo guardar en este dispositivo. Imprima la página para no perder el dato.';
+  pintar();
+});
+
+$('imprimir').addEventListener('click',()=>window.print());
+
+/* ---- patrón ---- */
+/* eje: 18:00 (1080 min) hasta 12:00 del día siguiente = 1080 min de ancho */
+const INICIO=18*60, ANCHO=18*60;
+function posicion(min){
+  let p=min-INICIO; if(p<0) p+=1440;
+  return Math.max(0,Math.min(ANCHO,p));
+}
+function pintar(){
+  const cont=$('filas');
+  if(!registros.length){
+    cont.innerHTML='<p class="vacio">Aún no hay noches registradas.</p>';
+    resumir(); return;
+  }
+  cont.innerHTML=registros.map(r=>{
+    const d=aMin(r.dormirse), w=aMin(r.despertar);
+    let barra='';
+    if(d!=null&&w!=null){
+      const x1=posicion(d), x2=posicion(w);
+      const izq=x1/ANCHO*100, ancho=Math.max(1,(x2-x1)/ANCHO*100);
+      barra=`<div class="barra" style="left:${izq}%;width:${ancho}%"></div>`;
+    }
+    const fuera=r.fuera==='si'?'<div class="marca-fuera"></div>':'';
+    const [,m,dd]=r.fecha.split('-');
+    return `<div class="fila"><div class="fecha">${dd}/${m}</div>
+      <div class="pista">${fuera}${barra}</div></div>`;
+  }).join('');
+  resumir();
+}
+
+function resumir(){
+  $('r-noches').textContent=registros.length;
+  if(!registros.length){
+    ['r-total','r-efic','r-desp','r-dorm','r-animo'].forEach(i=>$(i).textContent='—');
+    return;
+  }
+  const c=registros.map(calcular);
+  const prom=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+
+  $('r-total').textContent=texto(prom(c.map(x=>x.sueno).filter(Boolean)));
+  const ef=prom(c.map(x=>x.efic).filter(Boolean));
+  $('r-efic').textContent=ef?Math.round(ef)+'%':'—';
+
+  $('r-desp').textContent=reloj(prom(registros.map(r=>aMin(r.despertar)).filter(x=>x!=null)));
+
+  /* dormirse: si es de madrugada se suma un día para promediar bien */
+  const dorm=registros.map(r=>aMin(r.dormirse)).filter(x=>x!=null)
+                      .map(x=>x<12*60?x+1440:x);
+  $('r-dorm').textContent=reloj(prom(dorm));
+
+  const an=registros.map(r=>Number(r.animo)).filter(x=>x>0);
+  $('r-animo').textContent=an.length?prom(an).toFixed(1)+' / 5':'—';
+}
+
+/* fecha de hoy por defecto */
+(function(){
+  const h=new Date();
+  $('fecha').value=h.getFullYear()+'-'+String(h.getMonth()+1).padStart(2,'0')+'-'+String(h.getDate()).padStart(2,'0');
+})();
+
+cargar();
+</script>
+</body>
+</html>
