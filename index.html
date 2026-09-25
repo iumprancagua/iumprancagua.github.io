@@ -6,6 +6,7 @@
 <title>1ª Iglesia Unida Metodista Pentecostal de Rancagua</title>
 <meta name="description" content="Iglesia evangélica en Rancagua desde 1966. Cultos domingo 18:00, martes y jueves 19:00. Escuela Dominical domingo 10:30. Bandera 637, Rancagua. Hay un lugar para ti.">
 <link rel="canonical" href="https://iumprancagua.cl/">
+<meta name="google-site-verification" content="_JWu5E3WjUBVwE2Hmzoqkt7jxbMSQ7TBoovJH_VGx8Q">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#4A6B8A">
 <meta name="geo.region" content="CL-LI">
@@ -25,7 +26,7 @@
 <meta name="twitter:description" content="Iglesia evangélica en Rancagua desde 1966. Hay un lugar para ti.">
 <meta name="twitter:image" content="https://iumprancagua.cl/og.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Church","name":"1ª Iglesia Unida Metodista Pentecostal de Rancagua","alternateName":"IUMP 1ª Rancagua","url":"https://iumprancagua.cl/","logo":"https://iumprancagua.cl/og.jpg","image":"https://iumprancagua.cl/og.jpg","email":"ium1aprancagua@gmail.com","foundingDate":"1966","description":"Iglesia evangélica en Rancagua desde 1966.","address":{"@type":"PostalAddress","streetAddress":"Bandera 637","addressLocality":"Rancagua","addressRegion":"Región de O'Higgins","addressCountry":"CL"},"geo":{"@type":"GeoCoordinates","latitude":-34.1708,"longitude":-70.7406},"sameAs":["https://www.instagram.com/iumpprimeraderancagua/","https://web.facebook.com/iump.rancagua/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:30","description":"Escuela Dominical"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"18:00","description":"Culto general"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday"],"opens":"19:00"}]}
+{"@context":"https://schema.org","@type":"Church","name":"1ª Iglesia Unida Metodista Pentecostal de Rancagua","alternateName":"IUMP 1ª Rancagua","url":"https://iumprancagua.cl/","logo":"https://iumprancagua.cl/og.jpg","image":"https://iumprancagua.cl/og.jpg","email":"iumprancagua1a@gmail.com","foundingDate":"1966","description":"Iglesia evangélica en Rancagua desde 1966.","address":{"@type":"PostalAddress","streetAddress":"Bandera 637","addressLocality":"Rancagua","addressRegion":"Región de O'Higgins","addressCountry":"CL"},"geo":{"@type":"GeoCoordinates","latitude":-34.1708,"longitude":-70.7406},"sameAs":["https://www.instagram.com/iumpprimeraderancagua/","https://web.facebook.com/iump.rancagua/"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"10:30","description":"Escuela Dominical"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"18:00","description":"Culto general"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday"],"opens":"19:00"}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -55,10 +56,13 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px}
   .brand{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;text-decoration:none;color:var(--azul-hondo);letter-spacing:.04em}
   .brand span{color:var(--oro-palido)}
-  .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px 24px}
-  @media(max-width:560px){.nav-links{gap:10px 16px}.nav-links a{font-size:.8rem}}
-  .nav-links a{text-decoration:none;font-size:.86rem;font-weight:400;color:var(--tinta-suave);letter-spacing:.05em}
+  .nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:10px 15px}
+  @media(max-width:900px){.nav-links{gap:8px 14px}.nav-links a{font-size:.78rem}}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:400;color:var(--tinta-suave);letter-spacing:.03em;white-space:nowrap}
   .nav-links a:hover{color:var(--azul-hondo)}
+  .nav-links a.nav-priv{color:var(--azul-hondo);font-size:.76rem;padding-left:16px;border-left:1px solid var(--bruma)}
+  .priv-corta{display:none}
+  @media(max-width:1000px){.nav-links a.nav-priv{padding-left:0;border-left:none}.priv-larga{display:none}.priv-corta{display:inline}}
   @media(max-width:700px){.nav-links{display:none}}
 
   /* HERO */
@@ -79,6 +83,13 @@
   .lede{max-width:620px;margin:0 auto 14px;text-align:center;color:var(--tinta-suave)}
   .vela{width:46px;height:1px;background:var(--oro-palido);margin:34px auto 0;border:none}
 
+  .franja-pulpito{position:relative;overflow:hidden;height:clamp(340px,46vw,660px);background:var(--azul-hondo)}
+  .franja-pulpito img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
+  .franja-pulpito::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,26,38,.82) 0%,rgba(15,26,38,.6) 26%,rgba(15,26,38,.1) 52%,rgba(15,26,38,0) 72%),linear-gradient(180deg,rgba(15,26,38,.22) 0%,rgba(15,26,38,0) 40%)}
+  .franja-txt{position:absolute;left:0;bottom:0;z-index:1;max-width:min(30ch,52%);padding:0 28px 40px 48px;text-align:left;color:#FDFEFF}
+  @media(max-width:700px){.franja-txt{max-width:none;right:0;padding:0 26px 30px;text-align:center}}
+  .franja-txt p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.3vw,1.85rem);font-weight:400;font-style:italic;line-height:1.28;margin:0;text-wrap:pretty;text-shadow:0 2px 20px rgba(15,26,38,.85)}
+  .franja-txt span{display:block;margin-top:12px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#E6D3A3;text-shadow:0 2px 14px rgba(15,26,38,.9)}
   /* HORARIOS */
   #cultos{background:var(--cielo)}
   .grid-cultos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:54px}
@@ -109,8 +120,11 @@
 
   /* CREEMOS */
   #creemos{position:relative;background:var(--blanco)}
-  #creemos::before{content:"";position:absolute;top:0;left:0;right:0;height:460px;background:linear-gradient(180deg,rgba(253,254,255,.72) 0%,rgba(253,254,255,.8) 60%,var(--blanco) 100%),url(assets/fondo-creemos.jpg);background-size:cover;background-position:center 28%;z-index:0}
+  #creemos::before{content:"";position:absolute;top:0;left:0;right:0;height:460px;background:linear-gradient(180deg,rgba(253,254,255,.94) 0%,rgba(253,254,255,.86) 24%,rgba(253,254,255,.44) 44%,rgba(253,254,255,.34) 62%,rgba(253,254,255,.78) 88%,var(--blanco) 100%),url(assets/fondo-creemos-3.jpg);background-size:cover;background-position:center center;z-index:0}
   #creemos .wrap{position:relative;z-index:1}
+  #creemos .sec-label{color:var(--oro);text-shadow:0 1px 10px rgba(253,254,255,.95),0 0 24px rgba(253,254,255,.85)}
+  #creemos h2{text-shadow:0 1px 16px rgba(253,254,255,.95),0 0 30px rgba(253,254,255,.8)}
+  #creemos .lede{color:var(--tinta);font-weight:500;text-shadow:0 1px 12px rgba(253,254,255,.95),0 0 26px rgba(253,254,255,.8)}
   .creemos-list{list-style:none;max-width:920px;margin:50px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
   @media(max-width:720px){.creemos-list{grid-template-columns:1fr;max-width:660px}}
   .creemos-list li{padding:30px 0;border-top:1px solid var(--bruma);text-align:center}
@@ -191,11 +205,14 @@
   @media(prefers-reduced-motion:reduce){.modal-ov,.modal{transition:none}}
 
   /* FOOTER */
+  footer .legal{margin-top:18px;font-size:.8rem}
+  footer .legal a{color:var(--tinta-suave);text-decoration:none;letter-spacing:.04em}
+  footer .legal a:hover{color:var(--azul-hondo)}
   footer{text-align:center;padding:70px 28px;color:var(--tinta-suave);font-size:.86rem;background:var(--blanco)}
-  footer .brand{display:block;margin-bottom:16px;font-size:1.3rem}
+  
   footer .verso-pie{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--azul-hondo);margin-bottom:14px}
   footer .iump{font-size:.78rem;letter-spacing:.08em;color:#9AA8B6;margin-top:8px}
-  footer .nacional{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:10px}
+  footer .nacional{margin-top:0;display:flex;flex-direction:column;align-items:center;gap:10px}
   footer .nacional .conoce{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--azul-hondo);letter-spacing:normal;text-transform:none;margin-bottom:2px}
   footer .nacional a{display:inline-block;transition:transform .3s ease}
   footer .nacional a:hover{transform:translateY(-3px)}
@@ -282,16 +299,12 @@
   .redes-links a:hover{color:var(--oro)}
   .redes-links a svg{color:var(--oro-palido);flex-shrink:0}
 
-  /* Logo local en cabecera */
   .hero-marca{display:inline-flex;flex-direction:column;align-items:center;margin-bottom:28px}
-  .logo-hero{position:relative;display:inline-block;margin-bottom:24px}
-  .logo-hero img{display:block;width:147px;height:147px;border-radius:50%;box-sizing:border-box;border:2.5px solid #1c4b8a;box-shadow:0 14px 34px rgba(27,54,82,.22)}
-  .logo-hero::after{display:none}
   header .btn{background:rgba(253,254,255,.82);backdrop-filter:blur(4px)}
 
   /* ===== RETOQUE: micro-interacciones, iconos y reveals ===== */
   /* Entrada del hero */
-  header .logo-hero,header .eyebrow,header h1,header p.sub,header .btn{opacity:0;animation:heroIn .9s cubic-bezier(.2,.7,.3,1) forwards}
+  header .eyebrow,header h1,header p.sub,header .btn{opacity:0;animation:heroIn .9s cubic-bezier(.2,.7,.3,1) forwards}
   header .eyebrow{animation-delay:.08s}
   header h1{animation-delay:.16s}
   header p.sub{animation-delay:.26s}
@@ -335,7 +348,7 @@
   .reveal.in{opacity:1;transform:none}
 
   @media (prefers-reduced-motion: reduce){
-    header .logo-hero,header .eyebrow,header h1,header p.sub,header .btn{opacity:1;animation:none}
+    header .eyebrow,header h1,header p.sub,header .btn{opacity:1;animation:none}
     .reveal{opacity:1;transform:none;transition:none}
     .btn:hover,.card:hover,.min-item:hover,.mi-item:hover .mi-ico,.etapa:hover .icono{transform:none}
   }
@@ -345,7 +358,7 @@
   #cultos{position:relative;overflow:hidden}
   #cultos .wrap{position:relative;z-index:1}
   .cultos-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-          .cultos-velo{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,var(--blanco) 0%,rgba(253,254,255,0) 26%,rgba(253,254,255,0) 74%,var(--blanco) 100%)}
+          .cultos-velo{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,var(--blanco) 0%,rgba(253,254,255,.88) 18%,rgba(253,254,255,.48) 38%,rgba(253,254,255,.42) 62%,rgba(253,254,255,.86) 86%,var(--blanco) 100%)}
 
   /* Carrusel de fotos Escuela Dominical */
   .fotos-ed{margin-top:60px}
@@ -356,7 +369,7 @@
   .foto-cuadro{flex:0 0 auto;padding:8px;background:#fff;border:1px solid var(--oro-palido);border-radius:3px;box-shadow:0 10px 28px rgba(74,107,138,.12);transition:transform .5s cubic-bezier(.2,.7,.3,1),box-shadow .5s}
   .foto-cuadro:hover{transform:translateY(-5px);box-shadow:0 16px 38px rgba(74,107,138,.18)}
   .foto-cuadro img{width:148px;height:148px;display:block;object-fit:cover}
-  img.cultos-bg{opacity:.6;filter:saturate(1.05);object-fit:cover;object-position:center 40%}
+  img.cultos-bg{opacity:.66;filter:saturate(1.04);transform:scale(1.04);object-fit:cover;object-position:center 40%}
   .fotos-nota{text-align:center;font-size:.8rem;color:var(--tinta-suave);font-style:italic;margin-top:14px}
   .fotos-pista.rev{animation-direction:alternate-reverse}
   @media (prefers-reduced-motion: reduce){.fotos-pista{animation:none}}
@@ -386,25 +399,25 @@
       <a href="#creemos">Qué creemos</a>
       <a href="#ministerios">Ministerios</a>
       <a href="#visitanos">Visítanos</a>
+      <a class="nav-priv" href="privacidad.html"><span class="priv-larga">Aviso de privacidad</span><span class="priv-corta">Privacidad</span></a>
     </div>
   </div>
 </nav>
 
 <header id="inicio">
   <div class="hero-marca">
-    <div class="logo-hero"><img src="assets/logo-rancagua.png" alt="IUMP Primera Rancagua"></div>
     <span class="eyebrow" style="margin-bottom:0">Desde 1966</span>
   </div>
   <h1>Hay un lugar <em>para ti</em></h1>
   <p class="sub" style="font-style:italic">«Siguiendo la verdad en amor, crezcamos en todo en aquel que es la cabeza: Cristo.»<span style="display:block;font-style:normal;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro-palido);margin-top:14px;font-weight:600">Efesios 4:15 · RVR60</span></p>
-  <div style="display:flex;justify-content:center"><a class="btn" href="#cultos">Visítanos este domingo</a></div>
+  <div style="display:flex;justify-content:center"><a class="btn" href="#visitanos">Visítanos este domingo</a></div>
   <div class="hero-templo">
     <img src="assets/hero-fondo.jpg" alt="Ilustración en acuarela del templo de la 1ª IUMP de Rancagua, calle Bandera 637">
   </div>
 </header>
 
 <section id="cultos" style="border-top:1px solid var(--oro-palido)">
-  <img class="cultos-bg" src="assets/fondo-cultos.jpg" alt="Culto en la 1ª Iglesia Unida Metodista Pentecostal de Rancagua" loading="lazy" decoding="async">
+  <img class="cultos-bg" src="assets/fondo-horarios.jpg" alt="Culto en la 1ª Iglesia Unida Metodista Pentecostal de Rancagua" loading="lazy" decoding="async">
   <div class="cultos-velo"></div>
   <div class="wrap">
     <span class="sec-label">Nuestra semana</span>
@@ -426,7 +439,7 @@
         <p>El servicio central de la semana: adoración, gratitud y predicación de la Palabra.</p>
       </div>
     </div>
-    <p class="cuerpos-nota">Además, durante la semana las hermanas <strong><svg class="cn-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M12 8.5 8.4 18.5h7.2L12 8.5z"/><path d="M12 8.5v10"/></svg>Dorcas</strong>, los <strong><svg class="cn-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M7 18.5v-3.5a5 5 0 0 1 10 0v3.5"/></svg>Varones</strong> y los <strong><svg class="cn-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2"/><path d="M4.5 18.5V16a3.5 3.5 0 0 1 7 0v2.5"/><circle cx="16.4" cy="8" r="1.8"/><path d="M13.4 18.5v-2.2a3 3 0 0 1 6 0v2.2"/></svg>Jóvenes</strong> tienen también su espacio. Para más información, <button type="button" class="link-contacto" data-abrir-contacto>comunícate con nosotros</button>.</p>
+    <p class="cuerpos-nota">Además, durante la semana las hermanas <strong><svg class="cn-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M12 8.5 8.4 18.5h7.2L12 8.5z"/><path d="M12 8.5v10"/></svg>Dorcas</strong>, los <strong><svg class="cn-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M7 18.5v-3.5a5 5 0 0 1 10 0v3.5"/></svg>Varones</strong> y los <strong><svg class="cn-ico" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2"/><path d="M4.5 18.5V16a3.5 3.5 0 0 1 7 0v2.5"/><circle cx="16.4" cy="8" r="1.8"/><path d="M13.4 18.5v-2.2a3 3 0 0 1 6 0v2.2"/></svg>Jóvenes</strong> tienen también su espacio. Para más información, <a class="link-contacto" href="mailto:iumprancagua1a@gmail.com?subject=Consulta%20desde%20iumprancagua.cl">comunícate con nosotros</a>.</p>
   </div>
 </section>
 
@@ -435,15 +448,14 @@
     <div class="fotos-ed" style="margin-top:0">
       <div class="fotos-marco">
         <div class="fotos-pista rev">
-          <div class="foto-cuadro"><img src="assets/ed-09.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 1" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-07.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 2" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-05.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 3" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-02.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 4" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-08.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 5" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-04.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 6" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-06.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 7" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-01.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 8" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-03.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 9" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-01.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 1" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-06.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 2" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-02.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 3" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-07.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 4" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-03.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 5" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-09.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 6" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-05.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 7" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/gal-10.jpg" alt="Congregación de la 1ª IUMP Rancagua, fotografía 8" loading="lazy" decoding="async"></div>
         </div>
       </div>
     </div>
@@ -506,18 +518,20 @@
     <div class="fotos-ed">
       <div class="fotos-marco">
         <div class="fotos-pista">
-          <div class="foto-cuadro"><img src="assets/ed-01.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 1" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-02.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 2" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-03.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 3" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-04.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 4" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-05.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 5" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-06.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 6" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-07.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 7" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-08.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 8" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-09.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 9" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-10.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 10" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-11.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 11" loading="lazy" decoding="async"></div>
-          <div class="foto-cuadro"><img src="assets/ed-12.jpg" alt="Escuela Dominical de la 1ª IUMP Rancagua, fotografía 12" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-01.jpg" alt="Familia estudiando la lección en la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-04.jpg" alt="Oración durante la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-02.jpg" alt="Congregación tomando apuntes en la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-06.jpg" alt="Cuaderno de estudio de la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-03.jpg" alt="Compartiendo desayuno después de la clase" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-07.jpg" alt="Alumnos atentos a la enseñanza" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-05.jpg" alt="Comunión fraterna en el salón de la iglesia" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-01.jpg" alt="Familia estudiando la lección en la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-04.jpg" alt="Oración durante la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-02.jpg" alt="Congregación tomando apuntes en la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-06.jpg" alt="Cuaderno de estudio de la Escuela Dominical" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-03.jpg" alt="Compartiendo desayuno después de la clase" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-07.jpg" alt="Alumnos atentos a la enseñanza" loading="lazy" decoding="async"></div>
+          <div class="foto-cuadro"><img src="assets/esd-05.jpg" alt="Comunión fraterna en el salón de la iglesia" loading="lazy" decoding="async"></div>
         </div>
       </div>
       <p class="fotos-nota">Momentos de nuestra Escuela Dominical</p>
@@ -653,47 +667,28 @@
       <div>
         <div class="dato"><span class="dato-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span><div class="dato-txt"><span class="k">Dirección</span><span class="v">Bandera 637, Rancagua<br>Región de O'Higgins, Chile</span></div></div>
         <div class="dato"><span class="dato-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20.5l1.4-5A8 8 0 1 1 21 12z"/></svg></span><div class="dato-txt"><span class="k">Horario</span><span class="v">Escuela Dominical · Domingos 10:30 hrs</span></div></div>
-        <div class="dato"><span class="dato-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7.5 8.5 5.5 8.5-5.5"/></svg></span><div class="dato-txt"><span class="k">Correo</span><span class="v"><a href="mailto:ium1aprancagua@gmail.com">ium1aprancagua@gmail.com</a></span></div></div>
+        <div class="dato"><span class="dato-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7.5 8.5 5.5 8.5-5.5"/></svg></span><div class="dato-txt"><span class="k">Correo</span><span class="v"><a href="mailto:iumprancagua1a@gmail.com">iumprancagua1a@gmail.com</a></span></div></div>
         <div class="dato"><span class="dato-ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.4"/><path d="M15.4 12v1.6a2.4 2.4 0 0 0 4.8 0V12a8.2 8.2 0 1 0-3.2 6.5"/></svg></span><div class="dato-txt"><span class="k">Redes sociales</span><span class="v redes-links"><a href="https://www.instagram.com/iumpprimeraderancagua/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>@iumpprimeraderancagua</a><a href="https://web.facebook.com/iump.rancagua/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 8h-2.2C12 8 11.5 8.6 11.5 9.4V12H15l-.5 3h-3V22"/><path d="M11.5 22v-7h-2v-3h2"/></svg>IUMP Rancagua</a></span></div></div>
         <p class="invitacion">Si estás buscando una iglesia, si quieres volver al Señor, o si simplemente tienes preguntas — escríbenos. Será un gozo recibirte.</p>
-        <button type="button" class="btn" data-abrir-contacto style="margin-top:22px">Escríbenos un mensaje</button>
+        <a class="btn" href="mailto:iumprancagua1a@gmail.com?subject=Mensaje%20desde%20iumprancagua.cl" style="margin-top:22px">Escríbenos un correo</a>
       </div>
       <iframe title="Mapa: Bandera 637, Rancagua" src="https://maps.google.com/maps?q=Bandera%20637%2C%20Rancagua%2C%20Chile&z=16&output=embed" loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
-<div class="modal-ov" id="modal-contacto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
-  <div class="modal">
-    <button type="button" class="cerrar" data-cerrar-contacto aria-label="Cerrar">&times;</button>
-    <div class="m-form">
-      <span class="m-eyebrow">Contáctanos</span>
-      <h3 id="modal-titulo">Escríbenos un mensaje</h3>
-      <p class="m-sub">Completa el formulario y te responderemos a la brevedad.</p>
-      <form id="form-contacto">
-        <div class="campo"><label for="c-nombre">Tu nombre</label><input type="text" id="c-nombre" name="nombre" required></div>
-        <div class="campo"><label for="c-correo">Tu correo <span style="text-transform:none;letter-spacing:0;font-weight:400">(opcional)</span></label><input type="email" id="c-correo" name="correo"></div>
-        <div class="campo"><label for="c-mensaje">Tu mensaje</label><textarea id="c-mensaje" name="mensaje" required placeholder="Escribe aquí tu consulta, petición de oración o mensaje…"></textarea></div>
-        <button type="submit" class="m-btn">Enviar mensaje</button>
-        <p class="m-err" style="display:none;text-align:center;font-size:.82rem;color:#b4453a;margin-top:12px"></p>
-        <p class="m-nota">Tu mensaje llegará directamente a nuestra bandeja de correo.</p>
-      </form>
-    </div>
-    <div class="m-ok">
-      <svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
-      <p>¡Gracias! Recibimos tu mensaje.<br>Te responderemos muy pronto.</p>
-      <button type="button" class="btn" data-cerrar-contacto style="margin-top:20px">Cerrar</button>
-    </div>
-  </div>
-</div>
+<section class="franja-pulpito" aria-label="Adoración en la 1ª Iglesia Unida Metodista Pentecostal de Rancagua">
+  <img src="assets/franja-adoracion.jpg" alt="Hermanos adorando durante el culto en la 1ª Iglesia Unida Metodista Pentecostal de Rancagua" loading="lazy" decoding="async">
+  <div class="franja-txt"><p>«Alzad vuestras manos al santuario, y bendecid a Jehová»</p><span>Salmo 134:2 · RVR60</span></div>
+</section>
 
 <footer>
-  <span class="brand" style="font-family:'Cormorant Garamond',serif;color:var(--azul-hondo)">IUMP <span style="color:var(--oro-palido)">· 1ª Rancagua</span></span>
   <div class="nacional">
     <span class="conoce">Conoce nuestra organización</span>
     <a href="https://iglesiaunida.cl/" target="_blank" rel="noopener"><img src="assets/logo-iump.png" alt="Logo Iglesia Unida Metodista Pentecostal"></a>
     <span>Iglesia Unida Metodista Pentecostal</span>
   </div>
+  <div class="legal"><a href="privacidad.html">Aviso de privacidad</a></div>
 </footer>
 
 
@@ -752,63 +747,7 @@
 })();
 </script>
 
-<script>
-(function(){
-  var ov=document.getElementById('modal-contacto');
-  var modal=ov.querySelector('.modal');
-  var form=document.getElementById('form-contacto');
-  var CORREO='ium1aprancagua@gmail.com';
-  var ultimoFoco=null;
-  function abrir(){
-    ultimoFoco=document.activeElement;
-    modal.classList.remove('enviado');
-    ov.classList.add('abierto');
-    document.body.style.overflow='hidden';
-    setTimeout(function(){var f=document.getElementById('c-nombre');if(f)f.focus();},60);
-  }
-  function cerrar(){
-    ov.classList.remove('abierto');
-    document.body.style.overflow='';
-    if(ultimoFoco)ultimoFoco.focus();
-  }
-  document.querySelectorAll('[data-abrir-contacto]').forEach(function(b){b.addEventListener('click',abrir);});
-  document.querySelectorAll('[data-cerrar-contacto]').forEach(function(b){b.addEventListener('click',cerrar);});
-  ov.addEventListener('click',function(e){if(e.target===ov)cerrar();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('abierto'))cerrar();});
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var nombre=document.getElementById('c-nombre').value.trim();
-    var correo=document.getElementById('c-correo').value.trim();
-    var mensaje=document.getElementById('c-mensaje').value.trim();
-    var btn=form.querySelector('.m-btn');
-    var err=form.querySelector('.m-err');
-    err.style.display='none';
-    // Reemplaza el valor de abajo por tu ID de Formspree (ej. 'xabcdefg')
-    var FORMSPREE_ID='xvkpwkvn';
-    if(FORMSPREE_ID){
-      btn.disabled=true;var txt=btn.textContent;btn.textContent='Enviando…';
-      fetch('https://formspree.io/f/'+FORMSPREE_ID,{
-        method:'POST',
-        headers:{'Accept':'application/json'},
-        body:(function(){var fd=new FormData();fd.append('nombre',nombre);fd.append('email',correo);fd.append('mensaje',mensaje);fd.append('_subject','Mensaje desde iumprancagua.cl — '+(nombre||'Visitante'));return fd;})()
-      }).then(function(r){
-        btn.disabled=false;btn.textContent=txt;
-        if(r.ok){modal.classList.add('enviado');form.reset();}
-        else{err.textContent='No se pudo enviar. Intenta de nuevo o escríbenos a '+CORREO;err.style.display='block';}
-      }).catch(function(){
-        btn.disabled=false;btn.textContent=txt;
-        err.textContent='Sin conexión. Intenta de nuevo o escríbenos a '+CORREO;err.style.display='block';
-      });
-    } else {
-      // Respaldo: abrir app de correo mientras no esté configurado Formspree
-      var asunto='Mensaje desde el sitio web — '+(nombre||'Visitante');
-      var cuerpo=mensaje+'\n\n—\n'+nombre+(correo?(' ('+correo+')'):'')+'\nEnviado desde iumprancagua.cl';
-      window.location.href='mailto:'+CORREO+'?subject='+encodeURIComponent(asunto)+'&body='+encodeURIComponent(cuerpo);
-      modal.classList.add('enviado');form.reset();
-    }
-  });
-})();
-</script>
+
 
 </body>
 </html>
